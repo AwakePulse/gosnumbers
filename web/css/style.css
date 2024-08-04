@@ -1,0 +1,387 @@
+body {
+    font-family: "Montserrat" sans-serif;
+    height: 100vh;
+    display: flex;
+    background: url("/img/policefont.jpg") no-repeat center rgba(255, 255, 255, .6);
+    background-size: cover;
+    align-items: center;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, .6);
+}
+
+.arrow__back {
+    display: flex;
+    position: relative;
+    height: 30px;
+    top: -19em;
+    margin-left: 2em;
+}
+
+.arrow__back:hover {
+    color: rgb(85, 255, 0);
+}
+
+.arrow__back:target {
+    color: rgb(0, 0, 119);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.number {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 950px;
+    height: 150px;
+    background: white;
+    border: 5px solid black;
+    border-color: black;
+    border-radius: 15px;
+    color: black;
+    position: relative;
+    overflow: hidden;
+    padding: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.left__dot, .right__dot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left__dot {
+    position: absolute;
+    left: 0;
+    bottom: 3em;
+}
+
+.right__dot {
+    position: absolute;
+    right: 0;
+    bottom: 3em;
+}
+
+.number__left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9em;
+    position: absolute;
+    margin-left: 0.25em;
+    bottom: 0px;
+}
+
+.number__midle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14em;
+    position: absolute;
+    margin-left: 0.65em;
+    top: 0em;
+    bottom: 0em;
+}
+
+.number__middle__right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9em;
+    position: absolute;
+    margin-left: 3.26em;
+    bottom: 0px;
+}
+
+.double__num {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9em;
+    position: absolute;
+    margin-left: 5.2em; /* было 4.9*/ /* 5.2 - середина для 2-х*/ 
+    bottom: 50px;
+}
+
+.triple__num {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9em;
+    position: absolute;
+    margin-left: 4.9em;
+    bottom: 50px;
+}
+
+.number__lang {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 3.5em;
+    position: absolute;
+    margin-left: 12.5em;
+    bottom: 0px;
+}
+
+.number img {
+    position: absolute;
+    margin-left: 51.5em;
+    top: 9em;
+    border: 3.5px solid black;
+}
+
+.vl {
+    border-left: 5px solid rgb(0, 0, 0);
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    margin-left: 13em;
+    top: 0;
+}
+
+/* Добавить плавное появление номера сверху*/
+
+.popup__owner {
+    display: block;
+    position: absolute;
+}
+
+/*
+.popup {
+    position: fixed;
+    width: 55%;
+    height: 35%;
+    background-color: rgb(225, 222, 222, 0.8);
+    left: 25%;
+    margin-left: -0.625em;
+    border: 3px solid #323232;
+    border-radius: 25px;
+    opacity: 1;
+    visibility: visible;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.5s ease 0s;
+} */
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.5s ease 0s;
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup__body {
+    min-height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+}
+
+.popup__content {
+    position: fixed;
+    width: 55%;
+    height: 35%;
+    background-color: rgb(225, 222, 222);
+    left: 25%;
+    top: 34%;
+    margin-left: -0.625em;
+    border: 5px solid #000000;
+    border-radius: 25px;
+    opacity: 1;
+    visibility: visible;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.5s ease 0s;
+    text-align: center;
+    font-style: oblique;
+    font-size: large;
+}
+
+.popup__close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+}
+
+.popup__close:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.popup__title {
+    display: block;
+    margin-top: 10px;
+    text-decoration: underline 4px;
+}
+
+.owner__second__name {
+    position: absolute;
+    top: 2.5em;
+    left: 1.5em;
+}
+
+.owner__first__name {
+    position: absolute;
+    top: 4.5em;
+    left: 1.5em;
+}
+
+.owner__patronymic {
+    position: absolute;
+    top: 6.5em;
+    left: 1.5em;
+}
+
+.owner__birthday {
+    position: absolute;
+    top: 4.5em;
+    left: 15em;
+}
+
+.owner__citizenship {
+    position: absolute;
+    top: 6.5em;
+    left: 15em;
+}
+
+.owner__error {
+    display: block;
+    position: absolute;
+    right: 1.5em;
+    bottom: 1em;
+}
+
+.owner__error__but {
+    background: none;
+    border: 2px solid rgb(247, 205, 54);
+    border-radius: 15px;
+    text-align: center;
+    font-size: medium;
+}
+
+.owner__error__but:hover {
+    background-color: orange;
+    box-shadow: 10px 10px 21px #7e7e7e,
+                -10px -10px 21px #fff;
+    cursor: pointer;
+}
+
+.popup__owner {
+    display: block;
+    position: absolute;
+    left: 40em;
+    top: 33em;
+}
+
+.popup__owner {
+    width: 1000px;
+}
+
+.popup__owner__but {
+    position: absolute;
+    background: none;
+    border: 2px solid #000000;
+    border-radius: 15px;
+    width: 30em;
+    margin-left: -5em;
+}
+
+.popup__owner__but:hover {
+    background-color: white;
+    cursor: pointer;
+}
+
+.popup__owner__but:focus {
+    border-color: greenyellow;
+}
+
+.main__window {
+    display: flex;
+    background-color: #ffffff;
+    border: 4px solid black;
+    border-radius: 25px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    position: relative;
+}
+
+.window__body {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 5em;
+    padding-top: 8em;
+    align-items: center;
+}
+
+h3 {
+    text-align: center;
+    text-decoration: 2px underline;
+    
+}
+
+.div__number {
+    display: block;
+    border: 2px solid black;
+    border-radius: 15px;
+    align-items: center;
+    text-align: center;
+    float: left;
+    width: 120px;
+    height: 80px;
+    margin-left: 2em;
+    margin-bottom: 2em;
+}
+
+.img__number {
+    display: block;
+    align-items: center;
+    left: auto;
+    right: auto;
+    margin: 0 auto;
+}
+
+.save__date {
+    display: block;
+    position: absolute;
+    margin-left: 43em;
+    margin-top: 20em;
+    border: 2px solid black;
+    border-radius: 30em;
+    width: 350px;
+    background: none;
+    background-color: white;
+}
+
+.save__date:hover {
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+    border: 2px solid white;
+    color: white;
+}
